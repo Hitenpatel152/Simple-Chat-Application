@@ -2,11 +2,11 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
+const PORT = process.env.PORT || 1111;
 
-server.listen(1111);
-console.log('port no is 1111');
+server.listen(PORT);
+console.log(`Server Started On Port ${PORT}...`);
 app.get('/',function(req,res){
-
     res.sendFile(__dirname + '/index.html');
 });
 
